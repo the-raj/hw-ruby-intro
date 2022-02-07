@@ -4,7 +4,7 @@
 def sum arr
   # YOUR CODE HERE
   sum = 0
-  arr.each { |num| sum = sum + num }
+  arr.each { |num| sum += num }
   return sum
 end
 
@@ -13,7 +13,7 @@ def max_2_sum arr
   sum = 0
   arr2 = arr.sort.reverse
   for i in (0..1) do
-    sum = sum + arr2[i] unless i >= arr2.length
+    sum += arr2[i] unless i >= arr2.length
   end
   return sum
 end
@@ -35,17 +35,20 @@ end
 # Part 2
 def hello(name)
   # YOUR CODE HERE
-
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
-
+  return /^[a-z&&[^aeiou]]/i =~ s
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
-
+  if /^[0-1]+$/ =~ s
+    return s.to_i(2) % 4 == 0
+  end
+  return false
 end
 
 # Part 3
